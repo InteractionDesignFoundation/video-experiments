@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="Cache-control" content="public">
+
+    <title>Video Experiments</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.2/plyr.css" />
+    <script src="https://cdn.plyr.io/3.5.2/plyr.js"></script>
+</head>
+<body>
+
+<div style="width: 600px; margin: 0 auto;">
+    <h1>IDF::Video Experiments</h1>
+
+    <!--poster="/path/to/poster.jpg" -->
+    <video poster="https://public-media.interaction-design.org/tv/IDF-how-we-make-a-course-1080p--poster.jpg" playsinline controls crossorigin>
+        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-240p.mp4" type="video/mp4" size="240"/>
+        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-360p.mp4" type="video/mp4" size="360"/>
+        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-480p.mp4" type="video/mp4" size="480"/>
+        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-720p.mp4" type="video/mp4" size="720"/>
+
+        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-240p.webm" type="video/webm" size="240"/>
+        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-360p.webm" type="video/webm" size="360"/>
+        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-480p.webm" type="video/webm" size="480"/>
+        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-720p.webm" type="video/webm" size="720"/>
+
+        <!--<track kind="captions" label="English captions" src="https://s3.amazonaws.com/idf-courses/samples/sample.vtt" srclang="en" default />-->
+        <track kind="captions" label="English captions local" src="sample.vtt" srclang="en" default />
+    </video>
+
+    <br/>
+    <br/>
+
+    <h4>Youtube video</h4>
+    <div class="plyr__video-embed">
+        <iframe src="https://www.youtube.com/embed/bTqVqk7FSmY" allowfullscreen allowtransparency></iframe>
+    </div>
+
+    <h4>Vimeo video</h4>
+    <div class="plyr__video-embed">
+        <iframe
+                src="https://player.vimeo.com/video/76979871?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
+                allowfullscreen
+                allowtransparency
+                allow="autoplay"
+        ></iframe>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('video').forEach(element => {
+        new Plyr(element, {
+            settings: ['quality']
+        });
+    });
+
+    document.querySelectorAll('.plyr__video-embed').forEach(element => {
+        new Plyr(element);
+    });
+</script>
+
+</body>
+</html>
