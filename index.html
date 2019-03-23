@@ -6,17 +6,17 @@
     <meta http-equiv="Cache-control" content="public">
 
     <title>Video Experiments</title>
-    <link rel="stylesheet" href="css/styles.css" />
 
     <link rel="stylesheet" href="https://cdn.plyr.io/3.5.2/plyr.css" />
     <script src="https://cdn.plyr.io/3.5.2/plyr.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
 <div style="width: 600px; margin: 0 auto;">
     <h1>IDF::Video Experiments</h1>
 
-    <!--poster="/path/to/poster.jpg" -->
     <video poster="https://public-media.interaction-design.org/tv/IDF-how-we-make-a-course-1080p--poster.jpg" playsinline controls crossorigin>
         <source src="https://s3.amazonaws.com/idf-courses/samples/sample-240p.mp4" type="video/mp4" size="240"/>
         <source src="https://s3.amazonaws.com/idf-courses/samples/sample-360p.mp4" type="video/mp4" size="360"/>
@@ -54,12 +54,26 @@
 <script>
     document.querySelectorAll('video').forEach(element => {
         new Plyr(element, {
-            settings: ['quality']
+            settings: ['captions', 'quality', 'speed'],
+            captions: {
+                active: true,
+            },
+            // controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'],
+            tooltips: {
+                controls: true,
+                seek: true,
+            },
         });
     });
 
     document.querySelectorAll('.plyr__video-embed').forEach(element => {
-        new Plyr(element);
+        new Plyr(element, {
+            settings: ['captions', 'quality', 'speed'],
+            captions: {
+                active: true,
+            },
+            // controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'],
+        });
     });
 </script>
 
