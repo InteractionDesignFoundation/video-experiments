@@ -54,7 +54,7 @@
         </div>
     </div>
     <div style="width: 360px;">
-        <h4>Out-of-the-box features</h4>
+        <h4>Out-of-the-box key features</h4>
         <ul>
             <li>Settings for: quality, captions, speed</li>
             <li>Picture-in-picture (PIP)</li>
@@ -70,6 +70,7 @@
         <ul>
             <li>IDF skin (not 100% so far)</li>
             <li>Only one video playback on the page at once</li>
+            <li>Resume from the last playback position</li>
         </ul>
     </div>
 </div>
@@ -107,6 +108,7 @@
         player.on('playing', event => {
             checkForSingleActiveInstance(event.detail.plyr, 'playing');
 
+            window.localStorage.removeItem('video_' + player.media.baseURI);
             window.addEventListener('beforeunload', () => {
                 window.localStorage.setItem('video_' + player.media.baseURI, player.currentTime);
             });
@@ -117,7 +119,6 @@
             player.on('loadeddata', event => {
                 player.off('loadeddata');
                 player.currentTime = Math.max(currentTime - 2, 0);
-                window.localStorage.removeItem('video_' + player.media.baseURI);
             });
         }
     });
