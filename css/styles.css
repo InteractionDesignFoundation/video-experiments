@@ -6,6 +6,12 @@ li {
     margin-bottom: 5px;
 }
 
+h1 {
+    background: url('../img/idf-logo.png') no-repeat;
+    background-size: auto 100%;
+    padding-left: 45px;
+}
+
 h4 {
     color: #aaa;
     font-size: 13px;
