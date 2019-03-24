@@ -1,62 +1,15 @@
-@media (max-width: 480px) {
-    .plyr__controls {
-        padding: 35px 10px 10px !important;
-    }
-
-    .plyr__controls .plyr__volume {
-        max-width: 110px !important;
-    }
+body {
+    font-family: Tahoma;
 }
 
-
-.plyr__progress {
-    margin: 0 !important;
-    left: 16px;
-    right: 16px;
-    position: absolute;
-    top: 15px;
+li {
+    margin-bottom: 5px;
 }
 
-.plyr__controls > .plyr__control:first-child {
-    margin-right: 0;
-}
-
-.plyr__controls .plyr__control[data-plyr="play"] {
-    order: 0;
-}
-
-.plyr__controls .plyr__volume {
-    order: 10;
-}
-
-.plyr__controls .plyr__time {
-    order: 20;
-    margin-right: auto;
-}
-
-.plyr__controls .plyr__control[data-plyr="captions"] {
-  order: 50;
-}
-
-.plyr__controls .plyr__menu {
-    order: 60;
-}
-
-.plyr__controls .plyr__control[data-plyr="pip"] {
-    order: 80;
-}
-
-.plyr__controls .plyr__control[data-plyr="fullscreen"] {
-    order: 90;
-}
-
-
-.plyr .plyr__control--overlaid[data-plyr="play"] {
-    border: solid 2px rgba(255, 255, 255, .85);
-    border-radius: 50%;
-    transition: transform .1s ease-out;
-}
-
-.plyr:hover .plyr__control--overlaid[data-plyr="play"] {
-    transform: translate(-50%,-50%) scale(1.2);
+h4 {
+    color: #aaa;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }

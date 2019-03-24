@@ -10,68 +10,85 @@
     <link rel="stylesheet" href="https://cdn.plyr.io/3.5.2/plyr.css" />
     <script src="https://cdn.plyr.io/3.5.2/plyr.js"></script>
 
+    <link rel="stylesheet" href="css/plyr-idf-skin.css" />
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-<div style="width: 600px; margin: 0 auto;">
-    <h1>IDF::Video Experiments</h1>
+<div style="width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap;">
+    <h1 style="width: 100%;">IDF::Video Experiments</h1>
 
-    <video poster="https://public-media.interaction-design.org/tv/IDF-how-we-make-a-course-1080p--poster.jpg" playsinline controls crossorigin>
-        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-240p.mp4" type="video/mp4" size="240"/>
-        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-360p.mp4" type="video/mp4" size="360"/>
-        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-480p.mp4" type="video/mp4" size="480"/>
-        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-720p.mp4" type="video/mp4" size="720"/>
+    <div style="width: 500px; margin-right: 40px;">
+        <h4>IDF video</h4>
+        <video poster="https://public-media.interaction-design.org/tv/IDF-how-we-make-a-course-1080p--poster.jpg" playsinline controls crossorigin>
+            <source src="https://s3.amazonaws.com/idf-courses/samples/sample-240p.mp4" type="video/mp4" size="240"/>
+            <source src="https://s3.amazonaws.com/idf-courses/samples/sample-360p.mp4" type="video/mp4" size="360"/>
+            <source src="https://s3.amazonaws.com/idf-courses/samples/sample-480p.mp4" type="video/mp4" size="480"/>
+            <source src="https://s3.amazonaws.com/idf-courses/samples/sample-720p.mp4" type="video/mp4" size="720"/>
 
-        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-240p.webm" type="video/webm" size="240"/>
-        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-360p.webm" type="video/webm" size="360"/>
-        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-480p.webm" type="video/webm" size="480"/>
-        <source src="https://s3.amazonaws.com/idf-courses/samples/sample-720p.webm" type="video/webm" size="720"/>
+            <source src="https://s3.amazonaws.com/idf-courses/samples/sample-240p.webm" type="video/webm" size="240"/>
+            <source src="https://s3.amazonaws.com/idf-courses/samples/sample-360p.webm" type="video/webm" size="360"/>
+            <source src="https://s3.amazonaws.com/idf-courses/samples/sample-480p.webm" type="video/webm" size="480"/>
+            <source src="https://s3.amazonaws.com/idf-courses/samples/sample-720p.webm" type="video/webm" size="720"/>
 
-        <!--<track kind="captions" label="English captions" src="https://s3.amazonaws.com/idf-courses/samples/sample.vtt" srclang="en" default />-->
-        <track kind="captions" label="English captions local" src="sample.vtt" srclang="en" default />
-    </video>
+            <!--<track kind="captions" label="English captions" src="https://s3.amazonaws.com/idf-courses/samples/sample.vtt" srclang="en" default />-->
+            <track kind="captions" label="English captions local" src="sample.vtt" srclang="en" default />
+        </video>
 
-    <br/>
-    <br/>
+        <br/>
+        <br/>
 
-    <h4>Youtube video</h4>
-    <div class="plyr__video-embed">
-        <iframe src="https://www.youtube.com/embed/bTqVqk7FSmY" allowfullscreen allowtransparency></iframe>
+        <h4>Youtube video</h4>
+        <div class="plyr__video-embed">
+            <iframe src="https://www.youtube.com/embed/bTqVqk7FSmY" allowfullscreen allowtransparency></iframe>
+        </div>
+
+        <h4>Vimeo video</h4>
+        <div class="plyr__video-embed">
+            <iframe
+                    src="https://player.vimeo.com/video/76979871?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
+                    allowfullscreen
+                    allowtransparency
+                    allow="autoplay"
+            ></iframe>
+        </div>
     </div>
+    <div style="width: 360px;">
+        <h4>Out-of-the-box features</h4>
+        <ul>
+            <li>Settings for: quality, captions, speed</li>
+            <li>Picture-in-picture (PIP)</li>
+            <li>Keyboard shortcuts & accessibility</li>
+        </ul>
+        <a href="https://github.com/sampotts/plyr" target="_blank">See full list of features</a>
 
-    <h4>Vimeo videos (only one is playing at the moment)</h4>
-    <div style="display: flex; justify-content: space-between">
-        <div class="plyr__video-embed" style="width: 48%">
-            <iframe
-                    src="https://player.vimeo.com/video/76979871?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
-                    allowfullscreen
-                    allowtransparency
-                    allow="autoplay"
-            ></iframe>
-        </div>
-        <div class="plyr__video-embed" style="width: 48%">
-            <iframe
-                    src="https://player.vimeo.com/video/76979871?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
-                    allowfullscreen
-                    allowtransparency
-                    allow="autoplay"
-            ></iframe>
-        </div>
+        <br>
+        <br>
+
+        <h4>Added features</h4>
+        <ul>
+            <li>IDF skin (not 100% so far)</li>
+            <li>Only one video playback on the page at once</li>
+        </ul>
     </div>
 </div>
 
 <script>
     let activePlayer;
 
-    function checkForSingleActiveInstance(player) {
-        if (activePlayer && activePlayer !== player && activePlayer.playing) {
+    function checkForSingleActiveInstance(player, eventName) {
+        player.customState = eventName;
+
+        if (activePlayer && player !== activePlayer && activePlayer.customState === 'playing') {
             activePlayer.pause();
         }
-        activePlayer = player;
+
+        if (eventName === 'play') {
+            activePlayer = player;
+        }
     }
 
-    document.querySelectorAll('video').forEach(element => {
+    document.querySelectorAll('video, .plyr__video-embed').forEach(element => {
         const player = new Plyr(element, {
             settings: ['captions', 'quality', 'speed'],
             captions: {
@@ -83,20 +100,8 @@
                 seek: true,
             },
         });
-        player.on('playing', event => checkForSingleActiveInstance(event.detail.plyr));
-        player.on('play', event => checkForSingleActiveInstance(event.detail.plyr));
-    });
-
-    document.querySelectorAll('.plyr__video-embed').forEach(element => {
-        const player = new Plyr(element, {
-            settings: ['captions', 'quality', 'speed'],
-            captions: {
-                active: true,
-            },
-            // controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'],
-        });
-        player.on('playing', event => checkForSingleActiveInstance(event.detail.plyr));
-        player.on('play', event => checkForSingleActiveInstance(event.detail.plyr));
+        player.on('play', event => checkForSingleActiveInstance(event.detail.plyr, 'play'));
+        player.on('playing', event => checkForSingleActiveInstance(event.detail.plyr, 'playing'));
     });
 </script>
 

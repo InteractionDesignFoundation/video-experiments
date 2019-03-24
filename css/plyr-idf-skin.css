@@ -1,0 +1,83 @@
+@media (max-width: 480px) {
+    .plyr__controls {
+        padding: 35px 10px 10px !important;
+    }
+
+    .plyr__controls .plyr__volume {
+        max-width: 110px !important;
+    }
+}
+
+
+.plyr__tooltip,
+.plyr__menu__container {
+    background: #2b2b2b;
+    color: #fff;
+}
+
+
+.plyr__tooltip::before,
+.plyr__menu__container::after {
+    border-top-color: #2b2b2b;
+}
+
+.plyr__menu__container .plyr__control {
+    color: #fff
+}
+
+
+.plyr__progress {
+    margin: 0 !important;
+    left: 16px;
+    right: 16px;
+    position: absolute;
+    top: 15px;
+}
+
+.plyr__progress:hover progress {
+
+}
+
+.plyr__controls > .plyr__control:first-child {
+    margin-right: 0;
+}
+
+.plyr__controls .plyr__control[data-plyr="play"] {
+    order: 0;
+}
+
+.plyr__controls .plyr__volume {
+    order: 10;
+}
+
+.plyr__controls .plyr__time {
+    order: 20;
+    margin-right: auto;
+}
+
+.plyr__controls .plyr__control[data-plyr="captions"] {
+  order: 50;
+}
+
+.plyr__controls .plyr__menu {
+    order: 60;
+}
+
+.plyr__controls .plyr__control[data-plyr="pip"] {
+    order: 80;
+}
+
+.plyr__controls .plyr__control[data-plyr="fullscreen"] {
+    order: 90;
+}
+
+
+.plyr .plyr__control--overlaid[data-plyr="play"] {
+    border: solid 2px rgba(255, 255, 255, .85);
+    border-radius: 50%;
+    transition: transform .1s ease-out;
+}
+
+.plyr:hover .plyr__control--overlaid[data-plyr="play"] {
+    transform: translate(-50%,-50%) scale(1.2);
+}
