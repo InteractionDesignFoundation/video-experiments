@@ -59,6 +59,7 @@
             <li>Settings for: quality, captions, speed</li>
             <li>Picture-in-picture (PIP)</li>
             <li>Keyboard shortcuts & accessibility</li>
+            <li>Airplay</li>
         </ul>
         <a href="https://github.com/sampotts/plyr" target="_blank">See full list of features</a>
 
@@ -94,14 +95,31 @@
             captions: {
                 active: true,
             },
-            // controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'],
             tooltips: {
                 controls: true,
                 seek: true,
             },
         });
-        player.on('play', event => checkForSingleActiveInstance(event.detail.plyr, 'play'));
-        player.on('playing', event => checkForSingleActiveInstance(event.detail.plyr, 'playing'));
+
+        player.on('play', event => {
+            checkForSingleActiveInstance(event.detail.plyr, 'play');
+        });
+        player.on('playing', event => {
+            checkForSingleActiveInstance(event.detail.plyr, 'playing');
+
+            window.addEventListener('beforeunload', () => {
+                window.localStorage.setItem('video_' + player.media.baseURI, player.currentTime);
+            });
+        });
+
+        const currentTime = parseInt(window.localStorage.getItem('video_' + player.media.baseURI), 10);
+        if (!isNaN(currentTime)) {
+            player.on('loadeddata', event => {
+                player.off('loadeddata');
+                player.currentTime = Math.max(currentTime - 2, 0);
+                window.localStorage.removeItem('video_' + player.media.baseURI);
+            });
+        }
     });
 </script>
 
