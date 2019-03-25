@@ -60,6 +60,7 @@
             <li>Picture-in-picture (PIP)</li>
             <li>Keyboard shortcuts & accessibility</li>
             <li>Airplay</li>
+            <li>Size: 30.8 Kb (JS) + 4.4 Kb (CSS)</li>
         </ul>
         <a href="https://github.com/sampotts/plyr" target="_blank">See full list of features</a>
 
@@ -69,8 +70,8 @@
         <h4>Added features</h4>
         <ul>
             <li>IDF skin (not 100% so far)</li>
-            <li>Only one video playback on the page at once</li>
-            <li>Resume a playback on page reload</li>
+            <li>Only one video can be played at once</li>
+            <li>Restore a playback position on page reload</li>
         </ul>
     </div>
 </div>
@@ -119,6 +120,7 @@
             player.on('loadeddata', event => {
                 player.off('loadeddata');
                 player.currentTime = Math.max(currentTime - 2, 0);
+                player.elements.buttons.play[1].querySelector('.plyr__sr-only').innerHTML = 'Resume';
             });
         }
     });
