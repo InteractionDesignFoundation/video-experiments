@@ -26,6 +26,7 @@
 }
 
 
+/* Progress bar */
 .plyr__progress {
     margin: 0 !important;
     left: 16px;
@@ -34,8 +35,9 @@
     top: 15px;
 }
 
-.plyr__progress:hover progress {
 
+.plyr__progress input {
+    cursor: pointer;
 }
 
 .plyr__controls > .plyr__control:first-child {
