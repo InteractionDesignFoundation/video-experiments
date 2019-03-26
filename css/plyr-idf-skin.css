@@ -121,3 +121,13 @@
 .plyr--fullscreen-ui .plyr__control--overlaid[data-plyr="play"] {
     zoom: 2;
 }
+
+/* Hide controls before video's started playing */
+.plyr--paused.plyr--stopped .plyr__controls {
+    display: none;
+}
+
+/* Darken a video before it's started playing */
+.plyr--paused.plyr--stopped .plyr__video-wrapper {
+    filter: brightness(.5);
+}
