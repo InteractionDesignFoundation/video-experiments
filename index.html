@@ -7,6 +7,8 @@
 
     <title>Video Experiments</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Roboto+Condensed:400,500,700"/>
+
     <link rel="stylesheet" href="https://cdn.plyr.io/3.5.2/plyr.css" />
     <script src="https://cdn.plyr.io/3.5.2/plyr.js"></script>
 
@@ -72,6 +74,9 @@
             <li>IDF skin (not 100% so far)</li>
             <li>Only one video can be played at once</li>
             <li>Restore a playback position on page reload</li>
+            <li>Fullscreen has enlarged controls</li>
+            <li>Animated play button</li>
+            <li>Using "Roboto" font (like the website)</li>
         </ul>
     </div>
 </div>
@@ -120,6 +125,8 @@
         player.on('exitfullscreen', event => {
             player.elements.container.classList.remove('plyr--fullscreen-ui');
         });
+        player.on('volumechange', event => player.toggleControls(true));
+        player.on('seeking', event => player.toggleControls(true));
 
         const currentTime = parseInt(window.localStorage.getItem('video_' + player.media.baseURI), 10);
         if (!isNaN(currentTime)) {
