@@ -81,3 +81,10 @@
 .plyr:hover .plyr__control--overlaid[data-plyr="play"] {
     transform: translate(-50%,-50%) scale(1.2);
 }
+
+
+/* Fullscreen mode */
+.plyr--fullscreen-ui .plyr__controls,
+.plyr--fullscreen-ui .plyr__control--overlaid[data-plyr="play"] {
+    zoom: 2;
+}

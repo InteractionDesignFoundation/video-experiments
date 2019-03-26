@@ -114,6 +114,12 @@
                 window.localStorage.setItem('video_' + player.media.baseURI, player.currentTime);
             });
         });
+        player.on('enterfullscreen', event => {
+            player.elements.container.classList.add('plyr--fullscreen-ui');
+        });
+        player.on('exitfullscreen', event => {
+            player.elements.container.classList.remove('plyr--fullscreen-ui');
+        });
 
         const currentTime = parseInt(window.localStorage.getItem('video_' + player.media.baseURI), 10);
         if (!isNaN(currentTime)) {
