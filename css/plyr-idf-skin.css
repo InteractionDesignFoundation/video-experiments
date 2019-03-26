@@ -73,13 +73,44 @@
 
 
 .plyr .plyr__control--overlaid[data-plyr="play"] {
-    border: solid 2px rgba(255, 255, 255, .85);
+    /*border: solid 1px rgba(255, 255, 255, .7);*/
     border-radius: 50%;
+    width: 66px;
+    height: 66px;
     transition: transform .1s ease-out;
 }
 
+/* Play button in the center */
 .plyr:hover .plyr__control--overlaid[data-plyr="play"] {
+    background-color: #009cde;
     transform: translate(-50%,-50%) scale(1.2);
+}
+
+.plyr .plyr__control--overlaid svg {
+    transform: translate(50%);
+}
+
+.plyr .plyr__control--overlaid[data-plyr="play"]::before {
+    animation: fx-plyr-play-button 2s ease-out infinite;
+    border: 6px solid #009cde;
+    border-radius: 200%;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    content: "";
+    box-sizing: border-box;
+    height: 200%;
+    left: -50%;
+    position: absolute;
+    top: -50%;
+    width: 200%;
+}
+
+@keyframes fx-plyr-play-button {
+    0% {
+        transform: scale(.5);
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 
