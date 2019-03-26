@@ -1,0 +1,58 @@
+{
+    "name": "idf-player",
+    "private": true,
+    "engines": {
+        "node": ">=8.10"
+    },
+    "scripts": {
+        "css:check": "stylelint 'css/*.css'",
+        "build": "npm run development",
+        "build:staging": "npm run staging",
+        "build:production": "npm run production",
+        "watch:production": "cross-env NODE_ENV=production gulp watch",
+        "start": "cross-env NODE_ENV=development gulp watch",
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/.bin/webpack --progress --profile --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development --watch",
+        "watch-poll": "npm run watch --watch-poll",
+    },
+    "devDependencies": {
+        "autoprefixer": "^9.0.0",
+        "babel-eslint": "^10.0.1",
+        "babel-loader": "^7.0",
+        "babel-plugin-syntax-dynamic-import": "^6.18.0",
+        "babel-preset-env": "^1.7.0",
+        "browser-sync": "^2.24.0",
+        "browser-sync-webpack-plugin": "2.0.1",
+        "eslint": "^5.9.0",
+        "eslint-config-prettier": "^3.3.0",
+        "eslint-plugin-compat": "^2.6.0",
+        "eslint-plugin-import": "^2.14.0",
+        "gulp": "^4.0.0",
+        "gulp-eslint": "^5.0.0",
+        "prettier": "^1.15.0",
+        "stylelint": "^9.8.0",
+        "stylelint-config-recommended": "^2.1.0",
+        "stylelint-config-standard": "^18.2.0",
+        "webpack-bundle-analyzer": "^2.13.1"
+    },
+    "dependencies": {
+      "plyr": "^3.5.2"
+    },
+    "browserslist": {
+        "production": [
+            "last 4 Chrome versions",
+            "Firefox ESR",
+            "last 2 Edge versions",
+            "last 2 Safari versions",
+            "last 2 ChromeAndroid versions",
+            "last 4 iOS versions",
+            "last 2 FirefoxAndroid versions",
+            "last 2 Samsung versions"
+        ],
+        "development": [
+            "last 1 Chrome versions",
+            "last 1 Firefox versions"
+        ]
+    }
+}
