@@ -9,6 +9,11 @@
 }
 
 
+.plyr * {
+    font-family: Roboto !important;
+    font-weight: normal !important;
+}
+
 .plyr__tooltip,
 .plyr__menu__container {
     background: #2b2b2b;
