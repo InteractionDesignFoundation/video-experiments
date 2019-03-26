@@ -127,6 +127,12 @@
     zoom: 2;
 }
 
+/* Move captions a little up in fullscreen mode when controls are visible */
+.plyr--fullscreen-ui.plyr:not(.plyr--hide-controls) .plyr__controls:not(:empty)~.plyr__captions {
+    transform: translateY(-100px);
+}
+
+
 /* Hide controls before video's started playing */
 .plyr--paused.plyr--stopped .plyr__controls {
     display: none;
